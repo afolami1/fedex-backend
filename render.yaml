@@ -1,12 +1,12 @@
 services:
 
-    type: web
-    name: fedex-backend
-    runtime: python
-    buildCommand: bash build.sh
-    startCommand: gunicorn config.wsgi:application
+      type: web
+      name: fedex-backend
+      runtime: python
+      buildCommand: bash build.sh
+      startCommand: gunicorn config.wsgi:application
 
-    envVars:
+      envVars:
 
        key: PYTHON_VERSION
        value: 3.14.7
@@ -19,6 +19,6 @@ services:
 
 databases:
 
-    name: fedex-db
-    databaseName: fedex
-    user: fedex
+      name: fedex-db
+      databaseName: fedex
+      user: fedex
