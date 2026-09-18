@@ -2,6 +2,11 @@ from django.contrib import admin
 
 from .models import Shipment, TrackingUpdate
 
+class TrackingUpdateInline(admin.TabularInline):
+    model = TrackingUpdate
+    extra = 1
+    ordering = ("-date", "-time")
+
 @admin.register(Shipment)
 class ShipmentAdmin(admin.ModelAdmin):
     list_display = (
@@ -25,6 +30,9 @@ list_filter = (
     "status",
     "payment_status",
 )
+
+inlines = [TrackingUpdateInline]
+
 @admin.register(TrackingUpdate)
 class TrackingUpdateAdmin(admin.ModelAdmin):
     list_display = (
@@ -34,7 +42,7 @@ class TrackingUpdateAdmin(admin.ModelAdmin):
 "date",
 "time",
 )
-earch_fields = (
+search_fields = (
     "shipment__tracking_number",
     "location",
     "status",

@@ -17,9 +17,12 @@ class Shipment(models.Model):
     destination_address = models.CharField(max_length=255)
 
     weight = models.DecimalField(max_digits=10, decimal_places=2)
+    shipping_cost = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     payment_method = models.CharField(max_length=50)
-    payment_status = models.CharField(max_length=50, default="Paid")
+    payment_status = models.CharField(max_length=50, default="Pending")
+    payment_amount = models.DecimalField(max_digits=10,decimal_places=2,default=0,)
+
 
     status = models.CharField(max_length=100, default="Shipment Created")
 

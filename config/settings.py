@@ -30,12 +30,7 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-"localhost",
-"127.0.0.1",
-".onrender.com",
-]
-
+CORS_ALLOWED_ORIGINS = [ "http://localhost:5173", "https://fedex-shipping247.onrender.com", ]
 
 # Application definition
 
@@ -49,6 +44,7 @@ INSTALLED_APPS = [
     'shipments',
     'rest_framework',
     'corsheaders',
+    
 ]
 
 MIDDLEWARE = [
@@ -140,4 +136,6 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
-CORS_ALLOWED_ORIGINS = [ "http://localhost:5173", ]
+CORS_ALLOWED_ORIGINS = [ "http://localhost:5173",  "http://localhost:5174",]
+
+PAYSTACK_SECRET_KEY = "sk_test_4ecc39e25af2b261b968a903db5639ecb6f5fae2"
