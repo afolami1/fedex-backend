@@ -29,6 +29,7 @@ SECRET_KEY = os.environ.get(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = ["globalshippingonline247.onrender.com", "localhost", "127.0.0.1"]
 
 CORS_ALLOWED_ORIGINS = [ "http://localhost:5173", "https://fedex-shipping247.onrender.com", ]
 
