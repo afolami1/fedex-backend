@@ -152,10 +152,11 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 import os
 
 CLOUDINARY_STORAGE = {
-"CLOUD_NAME": os.environ.get("duqrfhtx"),
-"API_KEY": os.environ.get("312668982588697"),
-"API_SECRET": os.environ.get("lh99HD-WTQATgCBk6hJBAldwbeY"),
+"CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME"),
+"API_KEY": os.environ.get("CLOUDINARY_API_KEY"),
+"API_SECRET": os.environ.get("CLOUDINARY_API_SECRET"),
 }
+
 
 STORAGES = {
 "default": {
