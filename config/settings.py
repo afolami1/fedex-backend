@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+
 import os
 import dj_database_url
 
@@ -45,6 +47,8 @@ INSTALLED_APPS = [
     'shipments',
     'rest_framework',
     'corsheaders',
+    'cloudinary_storage',
+
     
 ]
 
@@ -143,3 +147,23 @@ CORS_ALLOWED_ORIGINS = [ "http://localhost:5173",  "http://localhost:5174", "htt
 PAYSTACK_SECRET_KEY = "sk_test_4ecc39e25af2b261b968a903db5639ecb6f5fae2"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+import os
+
+CLOUDINARY_STORAGE = {
+"CLOUD_NAME": os.environ.get("duqrfhtx"),
+"API_KEY": os.environ.get("312668982588697"),
+"API_SECRET": os.environ.get("lh99HD-WTQATgCBk6hJBAldwbeY"),
+}
+
+STORAGES = {
+"default": {
+"BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+},
+"staticfiles": {
+"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+},
+}
+
+

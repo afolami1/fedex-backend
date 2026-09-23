@@ -4,7 +4,8 @@ class Shipment(models.Model):
     tracking_number = models.CharField(max_length=50, unique=True)
     sender = models.CharField(max_length=255)
     receiver = models.CharField(max_length=255)
-    item_photo = models.ImageField(upload_to="shipment_items/", blank=True, null=True)
+    item_photo = models.ImageField(upload_to="shipment_items/",blank=True,null=True,)
+
 
 
     origin_country = models.CharField(max_length=100)
