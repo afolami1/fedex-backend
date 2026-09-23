@@ -1,0 +1,7 @@
+pycache/
+*.py[cod]
+db.sqlite3
+staticfiles/
+.env
+.venv/
+venv/.git-old/
